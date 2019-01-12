@@ -9,7 +9,7 @@ const validate = (rules) => {
                 error_messages.push(rule.message || `Invalid ${rule.key}`);
                 return;
             }
-            if (!rule.validation_function(value)) {
+            if (rule.validation_function && !rule.validation_function(value)) {
                 error_messages.push(rule.message);
             }
         });
