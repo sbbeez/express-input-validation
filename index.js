@@ -3,11 +3,11 @@ const { error_messages } = require("./constants")
 const validate = (rules) => {
     return (req, res, next) => {
         let error_messages = [];
-        rules.map(rule => {
+        rules.forEach(rule => {
             let value = extractValue(req, rule);
             if (!value) { 
                 error_messages.push(rule.message);
-                continue;
+                return;
             }
             if (!rule.validation_function(value)) {
                 error_messages.push(rule.message);
