@@ -1,0 +1,20 @@
+{
+  "name": "express-input-validation",
+  "version": "1.0.0",
+  "description": "This package is a express middleware for validating input that is in `header`, `query`, `params`, `body`",
+  "main": "index.js",
+  "keywords": [
+    "node-js",
+    "express-js",
+    "input-validation",
+    "simple-validation-for-node-express"
+  ],
+  "bugs": {
+    "url": "https://github.com/senthilbalajiganesan/express-input-validator/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "senthilbalajiganesan",
+  "license": "ISC"
+}
