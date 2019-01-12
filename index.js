@@ -10,7 +10,7 @@ const validate = (rules) => {
                 return;
             }
             if (rule.validation_function && !rule.validation_function(value)) {
-                error_messages.push(rule.message);
+                error_messages.push(rule.message || `Invalid ${rule.key}`);
             }
         });
         if (error_messages) {
