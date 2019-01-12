@@ -5,6 +5,10 @@ const validate = (rules) => {
         let error_messages = [];
         rules.map(rule => {
             let value = extractValue(req, rule);
+            if (!value) { 
+                error_messages.push(rule.message);
+                continue;
+            }
             if (!rule.validation_function(value)) {
                 error_messages.push(rule.message);
             }
@@ -12,7 +16,7 @@ const validate = (rules) => {
         if (error_messages) {
             res.status(400);
             res.send(error_messages);
-        } else { 
+        } else {
             next();
         }
     }
