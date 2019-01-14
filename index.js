@@ -6,11 +6,11 @@ const validate = (rules) => {
         rules.forEach(rule => {
             let value = extractValue(req, rule);
             if (!value) {
-                error_messages.push(rule.message || `Invalid ${rule.key}`);
+                error_messages.push(rule.message || `Invalid ${rule.key}, value not found in ${rule.from}`);
                 return;
             }
             if (rule.datatype && !dataTypeCheck(rule.datatype, value)) {
-                error_messages.push(rule.message || `Invalid ${rule.key}, required a ${rule.datatype}`);
+                error_messages.push(rule.message || `Invalid ${rule.key}, required a ${rule.datatype} value`);
                 return;
             }
             if (rule.validation_function && !rule.validation_function(value)) {

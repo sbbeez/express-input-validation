@@ -16,5 +16,30 @@ module.exports = [
     {
         "from": "body",
         "key": "value_from_body"
-    }
+    },
+    {
+        "from": "query",
+        "key": "numberCheck",
+        "datatype": "num"
+    },
+    {
+        "from": "query",
+        "key": "stringTest",
+        "datatype": "string"
+    },
+    {
+        "from": "query",
+        "key": "floatTest",
+        "datatype": "float"
+    },
+    {
+        "from": "query",
+        "key": "alphanumericTest",
+        "datatype": "alphanumeric"
+    },
+    {
+        "from": "query",
+        "key": "onlyAlphaTest",
+        "datatype": "only-alpha"
+    },
 ]

@@ -42,9 +42,9 @@ const dataTypeCheck = (type, value) => {
         case "string":
             return typeof value == "string" && isNaN(Number(value)); // checks if typeof is string and first character is not a number
         case "only-alpha":
-            return typeof value == "string" && isNaN(Number(value)) && onlyAlphabets.test(value);
+            return typeof value == "string" && isNaN(Number(value)) && onlyAlphabets(value);
         case "alphanumeric":
-            return typeof value == "string" && isNaN(Number(value)) && alphanumericRegex.test(value);
+            return typeof value == "string" && isNaN(Number(value)) && alphanumericRegex(value);
         case "float":
             return !isNaN(Number(value)) && Number(value) % 1 != 0;
         case "object":
