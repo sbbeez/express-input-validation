@@ -1,4 +1,4 @@
-const { extractValue } = require("./utils");
+const { extractValue, dataTypeCheck } = require("./utils");
 
 const validate = (rules) => {
     return (req, res, next) => {
@@ -7,6 +7,10 @@ const validate = (rules) => {
             let value = extractValue(req, rule);
             if (!value) {
                 error_messages.push(rule.message || `Invalid ${rule.key}`);
+                return;
+            }
+            if (rule.datatype && !dataTypeCheck(rule.datatype, value)) {
+                error_messages.push(rule.message || `Invalid ${rule.key}, required a ${rule.datatype}`);
                 return;
             }
             if (rule.validation_function && !rule.validation_function(value)) {
