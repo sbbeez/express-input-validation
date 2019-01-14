@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-const { validate } = require("express-input-validation");
+const { validate } = require("../index");
 
 let valuedValidate = validate(require("./rules"));
 
