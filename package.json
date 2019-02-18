@@ -1,6 +1,6 @@
 {
   "name": "express-input-validation",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "This package is a express middleware for validating input that is in `header`, `query`, `params`, `body`",
   "main": "index.js",
   "keywords": [

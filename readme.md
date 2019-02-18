@@ -45,11 +45,14 @@ Following are the example for validating using `express-input-validation`, here 
         "from": "query",
         "key": "emailId",
         validation_function: value => value.indexOf("@") > -1,
-        "datatype": "number"
+        "datatype": "number",
+        "is_optional": true
     }
 ```
 
 In rules array the above one can be one of the objects, here I've showed a custom `validation_function` without message, this ll return `Invalid emailId` incase the email id is not found or if it doesn't have an `@` in the value string.
+
+Now new rule can be defined as is_optional, where if its declared as optional, only if the field value found then it'll be validated otherwise it'll be ignored.
 
 ## Datatype-check (optional)
 In the rule you can also specify a datatype in `datatype` key to check for specific datatype of the value. datatypes can be checked below.
@@ -67,6 +70,7 @@ Datatype              | Description                 | Alternative key
 - `key`, `from` are required keys in object in all of the rule you define.
 - a rule without a `validation_function` is considered to be only `required` field, i.e., `express-input-validation` only checks if there is a field in specified `from` key in the object.
 - Datatype is still experimential.
+
 ## Roadmap
 
 ![Raodmap](https://lh3.googleusercontent.com/-FjSo_oAplUg/XDtIqBkPS6I/AAAAAAAACFA/GuN3X8cjj30TsN5hF10XAfpJ_6TwHZRqACLcBGAs/s0/Screen%2BShot%2B2019-01-13%2Bat%2B7.46.36%2BPM.png)
