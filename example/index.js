@@ -6,7 +6,7 @@ const { validate } = require("../index");
 let valuedValidate = validate(require("./rules"));
 
 
-app.get("/checkFromQuery/:id", valuedValidate, (req, res) => {
+app.get("/checkFromQuery", valuedValidate, (req, res) => {
     res.send("hey you get all inputs correct");
 });
 

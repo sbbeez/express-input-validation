@@ -2,7 +2,8 @@ module.exports = [
     {
         "from": "query",
         "key": "emailId",
-        validation_function: value => value.indexOf("@") > -1
+        validation_function: value => value.indexOf("@") > -1,
+        is_optional: true
     },
     {
         "from": "header",
